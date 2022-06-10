@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Doc</title>
+</head>
+<body>
+  <p class="mia">Our Menu</p>
+  <p class="sally">Your Preffered Choice.......</p>
+  <p id="menu items"></p>
+  <select name="menuField" id="menuField" class="menuField">
+    <option value="1">salad</option>
+    <option value="2">dodo & fried eggs</option>
+    <option value="3">chips & pork</option>
+   </select>
+  <input type="submit" value="submit" class="menuSubmit">
+  <div class="mel">
+  <p id="userSelection"></p>
+  <p id="ingredients"></p>
+  </div>  
+  <script>
+    let menu1="salad";
+     let menu2="dodo & fried eggs";
+     let menu3="chips & pork"; 
+     let ing1="vegetables,saladcream,eggs";
+     let ing2="ripe plantain, oil, salt and fresh eggs";
+     let ing3="yam,oil,salt,and pork meat";
+        window.alert("Welcome to " + "Sallys Bites")
+    document.getElementById('menu items').innerHTML="1. "+menu1+  " 2. "+ menu2+  " 3. " +menu3;
+    const menuSubmit = document.querySelector(".menuSubmit")
+    const menuField = document.querySelector(".menuField")
+    
+
+    function checkmenu(){
+      const menuvalue = Number(menuField.value);
+      
+      
+    //   while( menuvalue==""){
+    //  menuvalue= window.alert("please select a meal");
+
+      if(menuvalue == 1){
+        document.getElementById("userSelection").innerHTML="you have selected " +menu1;
+        document.getElementById("ingredients").innerHTML="The ingredients are: " +ing1;
+      }
+      else if(menuvalue == 2){
+        document.getElementById("userSelection").innerHTML="you have selected " +menu2;
+        document.getElementById("ingredients").innerHTML="The ingredients are: " +ing2;
+    }
+     else if(menuvalue == 3){
+        document.getElementById("userSelection").innerHTML="you have selected " +menu3;
+        document.getElementById("ingredients").innerHTML="The ingredients are: " +ing3;
+  }
+  else{
+    document.writeln("this meal is not on our menu");
+}
+    }
+   menuSubmit.addEventListener("click", checkmenu);
+
+    
+  </script>
+</body>
+</html>
